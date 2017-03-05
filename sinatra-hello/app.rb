@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  'Hello world!'
+  "Time: #{Time.new}<br>Lucky number: #{Random.rand(20)}"
 end
