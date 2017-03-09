@@ -6,7 +6,4 @@ of default WEBrick for performance.
 [Sinatra]: http://www.sinatrarb.com/
 [Puma]: http://puma.io/
 
-Running information: Puma is run on port 9292. To gracefully shut-down Puma,
-send it an "interrupt" signal (`INT`/`SIGINT`) with [`docker kill`][kill].
-
-[kill]: https://docs.docker.com/engine/reference/commandline/kill/
+Running information: Puma is run on port 9292.
