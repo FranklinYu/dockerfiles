@@ -1,15 +1,15 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    puma (3.7.1)
-    rack (1.6.5)
-    rack-protection (1.5.3)
+    puma (3.11.4)
+    rack (1.6.10)
+    rack-protection (1.5.5)
       rack
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
-    tilt (2.0.6)
+    tilt (2.0.8)
 
 PLATFORMS
   ruby
@@ -22,4 +22,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.14.4
+   1.14.6

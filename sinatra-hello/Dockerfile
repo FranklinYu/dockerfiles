@@ -1,4 +1,4 @@
-FROM ruby:2.4.0-alpine
+FROM alpine
 
 ARG app_path=/usr/src/app/
 
@@ -7,9 +7,11 @@ WORKDIR $app_path
 
 COPY gems.rb $app_path
 COPY gems.locked $app_path
-RUN apk add --update-cache build-base \
+RUN apk add --update-cache --virtual .build \
+		ruby-bundler ruby-dev build-base libressl-dev \
+	&& apk add ruby \
 	&& bundle install --frozen \
-	&& apk del build-base
+	&& apk del .build
 
 COPY . $app_path
-CMD [ "bundle", "exec", "puma" ]
+CMD [ "puma" ]
