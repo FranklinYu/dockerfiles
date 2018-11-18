@@ -1,5 +1,7 @@
 FROM alpine
 
+RUN apk add ruby
+
 ARG app_path=/usr/src/app/
 
 RUN mkdir -p $app_path
@@ -7,7 +9,6 @@ WORKDIR $app_path
 
 COPY gems.rb $app_path
 COPY gems.locked $app_path
-RUN apk add ruby
 RUN apk add --update-cache --virtual .build \
 		ruby-bundler ruby-dev build-base libressl-dev \
 	&& bundle install --frozen \
