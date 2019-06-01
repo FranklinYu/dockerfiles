@@ -1,6 +1,6 @@
-FROM alpine
+FROM alpine:3.9
 
-RUN apk add ruby
+RUN apk add ruby ruby-etc
 
 ARG app_path=/usr/src/app/
 
