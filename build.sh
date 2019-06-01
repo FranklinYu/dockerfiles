@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+if [[ $SEMAPHORE_TRIGGER_SOURCE != 'scheduler' ]]
+then echo 'Not scheduled build.' && exit
+fi
 
 set -o errexit
 
