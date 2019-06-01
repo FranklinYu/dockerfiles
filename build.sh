@@ -4,7 +4,7 @@ set -o errexit
 
 for image in $IMAGES; do
     cd $image
-    docker build --tag franklinyu/$image .
-    docker push franklinyu/$image
+    docker build --tag franklinyu/$image . | cat
+    docker push franklinyu/$image | cat
     cd ..
 done
