@@ -1,6 +1,6 @@
 FROM alpine:3.9
 
-RUN apk add ruby ruby-etc
+RUN apk add ruby ruby-etc libressl
 
 ARG app_path=/usr/src/app/
 
