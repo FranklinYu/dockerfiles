@@ -12,4 +12,5 @@ WORKDIR /srv
 COPY . .
 COPY --from=0 /srv/vendor vendor
 COPY --from=0 /srv/.bundle .bundle
+EXPOSE 9292
 CMD [ "bundle", "exec", "puma" ]
