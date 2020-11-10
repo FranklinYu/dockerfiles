@@ -20,6 +20,7 @@ jobs:
         uses: docker/build-push-action@v2.1.0
         with:
           context: octave
+          file: octave/Dockerfile
           push: true
           tags: franklinyu/octave:latest
           platforms: linux/amd64
@@ -27,6 +28,7 @@ jobs:
         uses: docker/build-push-action@v2.1.0
         with:
           context: sinatra-hello
+          file: sinatra-hello/Dockerfile
           push: true
           tags: franklinyu/sinatra-hello:latest
           platforms: linux/amd64
