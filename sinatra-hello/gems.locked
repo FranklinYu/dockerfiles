@@ -3,7 +3,9 @@ GEM
   specs:
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    puma (3.12.4)
+    nio4r (2.5.4)
+    puma (5.0.4)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
