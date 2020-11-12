@@ -7,7 +7,7 @@ COPY gems.locked .
 RUN bundle install --deployment
 
 FROM alpine:3.10
-RUN apk add ruby ruby-etc ruby-bundler libressl
+RUN apk add ruby ruby-etc ruby-json ruby-bundler libressl
 WORKDIR /srv
 COPY . .
 COPY --from=0 /srv/vendor vendor
