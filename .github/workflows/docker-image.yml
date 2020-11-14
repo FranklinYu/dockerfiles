@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: [octave, sinatra-hello]
+        image: [http3-client, octave, sinatra-hello]
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1.0.2
