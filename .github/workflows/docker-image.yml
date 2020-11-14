@@ -3,8 +3,6 @@ name: build Docker image
 on:
   schedule:
     - cron: '14 3 * * SAT'
-  push:
-    branches: [master]
 
 jobs:
   build:
