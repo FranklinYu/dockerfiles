@@ -9,9 +9,13 @@ blocks:
     task:
       jobs:
         - name: Docker build
+          matrix:
+            - env_var: IMAGE
+              values: [octave, quiche-client, sinatra-hello]
           commands:
             - checkout
             - echo "$DOCKER_HUB_PASSWORD" | docker login --username="$DOCKER_HUB_USERNAME" --password-stdin
-            - bash build.bash http3-client octage quiche-client sinatra-hello
+            - docker build --tag="franklinyu/$IMAGE" "$IMAGE"
+            - docker push "franklinyu/$IMAGE"
       secrets:
         - name: docker-hub
