@@ -8,14 +8,19 @@ blocks:
   - name: build
     task:
       jobs:
-        - name: Docker build
-          matrix:
-            - env_var: IMAGE
-              values: [octave, sinatra-hello]
-          commands:
+        - name: Octave
+          env_vars:
+            - name: IMAGE
+              value: octave
+          commands: &build-docker-image
             - checkout
             - echo "$DOCKER_HUB_PASSWORD" | docker login --username="$DOCKER_HUB_USERNAME" --password-stdin
             - docker build --tag="franklinyu/$IMAGE" "$IMAGE"
             - docker push "franklinyu/$IMAGE"
+        - name: Sinatra hello-world
+          env_vars:
+            - name: IMAGE
+              value: sinatra-hello
+          commands: *build-docker-image
       secrets:
         - name: docker-hub
