@@ -11,7 +11,7 @@ blocks:
         - name: Docker build
           matrix:
             - env_var: IMAGE
-              values: [octave, quiche-client, sinatra-hello]
+              values: [octave, sinatra-hello]
           commands:
             - checkout
             - echo "$DOCKER_HUB_PASSWORD" | docker login --username="$DOCKER_HUB_USERNAME" --password-stdin
