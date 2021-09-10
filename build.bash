@@ -1,14 +1,9 @@
 #!/bin/bash
 
-if [[ $SEMAPHORE_TRIGGER_SOURCE != 'scheduler' ]]
-then echo 'Not scheduled build.' && exit
-fi
+set -o errexit -o nounset -o pipefail
 
-set -o errexit
-
-for image in $IMAGES; do
-    cd $image
-    docker build --tag franklinyu/$image . | cat
-    docker push franklinyu/$image | cat
-    cd ..
+for image
+do
+    docker build --tag="franklinyu/$image" "$image"
+    docker push "franklinyu/$image"
 done

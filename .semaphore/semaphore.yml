@@ -12,6 +12,6 @@ blocks:
           commands:
             - checkout
             - echo "$DOCKER_HUB_PASSWORD" | docker login --username="$DOCKER_HUB_USERNAME" --password-stdin
-            - docker build --tag=franklinyu/sinatra-hello sinatra-hello
+            - bash build.bash http3-client octage quiche-client sinatra-hello
       secrets:
         - name: docker-hub
