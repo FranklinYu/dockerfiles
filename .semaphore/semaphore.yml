@@ -11,4 +11,7 @@ blocks:
         - name: Docker build
           commands:
             - checkout
+            - echo "$DOCKER_HUB_PASSWORD" | docker login --username="$DOCKER_HUB_USERNAME" --password-stdin
             - docker build --tag=franklinyu/sinatra-hello sinatra-hello
+      secrets:
+        - name: docker-hub
