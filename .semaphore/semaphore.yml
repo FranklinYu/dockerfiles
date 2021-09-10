@@ -15,6 +15,7 @@ blocks:
           commands: &build-docker-image
             - checkout
             - echo "$DOCKER_HUB_PASSWORD" | docker login --username="$DOCKER_HUB_USERNAME" --password-stdin
+            - docker pull "$DOCKER_HUB_USERNAME/$IMAGE"
             - docker build --tag="$DOCKER_HUB_USERNAME/$IMAGE" "$IMAGE"
             - docker push "$DOCKER_HUB_USERNAME/$IMAGE"
         - name: Sinatra hello-world
