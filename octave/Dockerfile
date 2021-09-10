@@ -1,4 +1,5 @@
 FROM alpine:edge
 
-RUN apk add octave --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+ARG testing_repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
+RUN apk add octave --repository="$testing_repository"
 CMD ["octave", "--no-window-system", "--path", "/docker"]
