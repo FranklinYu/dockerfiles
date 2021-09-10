@@ -22,5 +22,13 @@ blocks:
             - name: IMAGE
               value: sinatra-hello
           commands: *build-docker-image
+        - name: Quiche client
+          env_vars:
+            - name: IMAGE
+              value: quiche-client
+          commands: *build-docker-image
+          priority:
+            - value: 30
+              when: true
       secrets:
         - name: docker-hub
