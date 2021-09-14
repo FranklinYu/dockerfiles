@@ -4,6 +4,6 @@ set -o errexit -o nounset -o pipefail
 
 for image
 do
+    docker pull "franklinyu/$image"
     docker build --tag="franklinyu/$image" "$image"
-    docker push "franklinyu/$image"
 done
