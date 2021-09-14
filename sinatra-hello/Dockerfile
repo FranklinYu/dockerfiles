@@ -1,4 +1,6 @@
-FROM alpine:3.13
+ARG ALPINE_VERSION
+
+FROM alpine:$ALPINE_VERSION
 RUN apk add ruby-bundler ruby-dev build-base libressl-dev
 WORKDIR /srv
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
@@ -6,7 +8,7 @@ COPY gems.rb .
 COPY gems.locked .
 RUN bundle install --deployment
 
-FROM alpine:3.13
+FROM alpine:$ALPINE_VERSION
 RUN apk add ruby ruby-etc ruby-json ruby-bundler libressl
 WORKDIR /srv
 COPY . .
