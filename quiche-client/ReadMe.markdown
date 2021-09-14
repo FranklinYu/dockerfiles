@@ -1,6 +1,5 @@
 # Quiche HTTP client
 
-[![MicroBadger](https://images.microbadger.com/badges/image/franklinyu/quiche-client.svg)](https://microbadger.com/images/franklinyu/quiche-client "Get your own image badge on microbadger.com")
 [![Docker Pulls](https://img.shields.io/docker/pulls/franklinyu/quiche-client.svg)](https://hub.docker.com/r/franklinyu/quiche-client)
 
 HTTP client from [`quiche_apps` crate][crate]. Usage:
