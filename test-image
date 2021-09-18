@@ -5,5 +5,5 @@ set -o errexit -o nounset -o pipefail
 for image
 do
     docker pull "franklinyu/$image"
-    docker build --tag="franklinyu/$image" --build-arg='ALPINE_VERSION=3.13' "$image"
+    docker build --tag="franklinyu/$image" --build-arg='ALPINE_VERSION=3.14' "$image"
 done
