@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+# Generate the ReadMe on Docker Hub.
+
+BADGE_URL = 'https://img.shields.io/badge/GitHub-source-informational?logo=github'
+
+def readme_header(name)
+  link_url = "https://github.com/FranklinYu/dockerfiles/tree/master/#{name}"
+  return "[![source](#{BADGE_URL})](#{link_url})"
+end
+
+def subst_readme(name)
+  File.open("#{name}/ReadMe.markdown") do |f|
+    puts readme_header(name)
+    f.first(3)  # drop 3 lines, including the title and the badge
+    f.each_line { |l| puts l }
+  end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  if ARGV.length != 1
+    raise 'Expected exactly one argument.'
+  end
+  subst_readme(ARGV[0])
+end
