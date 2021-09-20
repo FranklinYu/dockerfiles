@@ -39,5 +39,13 @@ blocks:
           priority:
             - value: 30
               when: true
+        - name: TexLive
+          env_vars:
+            - name: IMAGE
+              value: texlive
+          commands: *build-docker-image
+          priority:
+            - value: 30
+              when: true
       secrets:
         - name: docker-hub
