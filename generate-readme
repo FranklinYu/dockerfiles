@@ -10,8 +10,9 @@ end
 
 def subst_readme(name)
   File.open("#{name}/ReadMe.markdown") do |f|
+    f.first(2).each { |l| puts l }
     puts readme_header(name)
-    f.first(3)  # drop 3 lines, including the title and the badge
+    f.first  # drop the badge line
     f.each_line { |l| puts l }
   end
 end
