@@ -2,7 +2,7 @@ ARG ALPINE_VERSION
 
 FROM alpine:$ALPINE_VERSION
 RUN apk add build-base cargo cmake git
-RUN 2>&1 git clone --depth=1 --recurse-submodule -b 0.6.0 https://github.com/cloudflare/quiche.git
+RUN 2>&1 git clone --depth=1 --recurse-submodule --branch=0.9.0 https://github.com/cloudflare/quiche.git
 RUN cd quiche/tools/apps && 2>&1 cargo build --bin quiche-client --release
 
 FROM alpine:$ALPINE_VERSION
