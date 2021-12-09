@@ -2,7 +2,7 @@ ARG ALPINE_VERSION
 
 FROM alpine:$ALPINE_VERSION
 RUN apk add build-base cargo cmake
-RUN 2>&1 cargo install --example http3-client quiche
+RUN 2>&1 cargo install --example=http3-client --version=~0.9 quiche
 
 FROM alpine:$ALPINE_VERSION
 RUN apk add libgcc
