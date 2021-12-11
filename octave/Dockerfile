@@ -1,5 +1,5 @@
-FROM alpine:edge
+ARG ALPINE_VERSION
+FROM alpine:$ALPINE_VERSION
 
-ARG testing_repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
-RUN apk add octave --repository="$testing_repository"
+RUN apk add octave
 CMD ["octave", "--no-window-system", "--path", "/docker"]
