@@ -1,6 +1,7 @@
 # Quiche HTTP client
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/franklinyu/quiche-client.svg)](https://hub.docker.com/r/franklinyu/quiche-client)
+![Docker image size](https://img.shields.io/docker/image-size/franklinyu/quiche-client/latest)
 
 HTTP client from [`quiche_apps` crate][crate]. Usage:
 

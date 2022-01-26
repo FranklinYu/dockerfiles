@@ -1,6 +1,7 @@
 # Octave
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/franklinyu/octave.svg)](https://hub.docker.com/r/franklinyu/octave)
+![Docker image size](https://img.shields.io/docker/image-size/franklinyu/octave/latest)
 
 By default `/docker` will be in the Octave search path, so it is probably
 desired to mount some directory with option `-v`/`--volume`, such as
