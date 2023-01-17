@@ -23,22 +23,6 @@ blocks:
             - name: IMAGE
               value: sinatra-hello
           commands: *build-docker-image
-        - name: HTTP3 client
-          env_vars:
-            - name: IMAGE
-              value: http3-client
-          commands: *build-docker-image
-          priority:
-            - value: 30
-              when: true
-        - name: Quiche client
-          env_vars:
-            - name: IMAGE
-              value: quiche-client
-          commands: *build-docker-image
-          priority:
-            - value: 30
-              when: true
         - name: TexLive
           env_vars:
             - name: IMAGE
